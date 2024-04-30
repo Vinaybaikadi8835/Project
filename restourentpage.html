@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Owner Page</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+      background-image: url("welcome page background.png"); /* Replace 'background-image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    }
+    .container {
+      margin: 20px auto;
+      max-width: 800px; /* Increased for navigation bar */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+      font-size: 32px;
+      
+      letter-spacing: 2px;
+    }
+    h1{
+      
+      font-size: 40px;
+ 
+     }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 5px;
+      color: #333;
+    }
+    input[type="text"], input[type="file"], textarea {
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      width: calc(100% - 20px); /* Adjusted width */
+    }
+    .food-item {
+      position: relative;
+      padding-bottom: 20px; /* Space for partition line */
+    }
+    .food-item:not(:last-child) {
+      border-bottom: 1px solid #ccc; /* Partition line */
+      margin-bottom: 20px; /* Space between items */
+    }
+    .delete-item {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 8px;
+      cursor: pointer;
+      align-self: flex-end; /* Align to the end of container */
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
+    }
+    /* Navigation bar styles */
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    /* Contact details styles */
+    #contactDetails {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    /* Orders and menu styles */
+    #orders, #menu, #restaurantDetails {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .food-item img {
+      width: 100px;
+      height: auto;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+    
+  </style>
+</head>
+<body>
+  <nav>
+    <h1><span style="color: #f3f3f3;">welcome to</span>  <span style="color: #ff5722;">BookItNow</span></h1>
+    <a href="#orders">See Orders</a>
+    <a href="#menu">Our Menu</a>
+    <a href="#restaurantDetails">Restaurant Details</a>
+    <a href="#contactDetails">Contact Us</a>
+    <a href="vender login.html">Logout</a>
+  </nav>
+
+  <div id="orders" class="container">
+    <h2>Orders</h2>
+    <p>No orders yet</p>
+  </div>
+
+  <div id="menu" class="container">
+    <h2>Menu</h2>
+    <div id="menuItems">
+      <!-- Menu items will be displayed here -->
+
+    </div>
+  </div>
+
+  <div id="restaurantDetails" class="container">
+    <h2>Restaurant Details</h2>
+    <form id="restaurantForm">
+      <label for="restaurantName">Restaurant Name:</label>
+      <input type="text" id="restaurantName" required>
+      
+      <label for="restaurantImage">Restaurant Image:</label>
+      <input type="file" id="restaurantImage" accept="image/*" required>
+
+      <div id="foodItems">
+        <div class="food-item">
+          <label for="itemName1">Food Item Name:</label>
+          <input type="text" id="itemName1" required>
+
+          <label for="itemImage1">Food Item Image:</label>
+          <input type="file" id="itemImage1" accept="image/*" required>
+
+          <label for="itemCost1">Cost ($):</label>
+          <input type="text" id="itemCost1" required>
+
+          <label for="itemDescription1">Description:</label>
+          <textarea id="itemDescription1" rows="4"></textarea>
+
+          <button type="button" class="delete-item">Delete</button>
+        </div>
+      </div>
+
+      <button type="button" id="addFoodItem">Add Food Item</button>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="contactDetails" class="container">
+    <h2>Contact Us</h2>
+    <p>Helpline Number: 000 0101 2020</p>
+    <p>WhatsApp: 1231231230</p>
+    <p>Email: bookItNow@gmail.com</p>
+    <p>Feel free to contact us, 24/7 service available</p>
+  </div>
+
+  <script>
+    // JavaScript logic
+    document.getElementById('addFoodItem').addEventListener('click', function() {
+      var foodItemsContainer = document.getElementById('foodItems');
+      var itemCount = foodItemsContainer.children.length + 1;
+
+      var foodItemDiv = document.createElement('div');
+      foodItemDiv.className = 'food-item';
+
+      foodItemDiv.innerHTML = `
+        <div class="food-item">
+          <label for="itemName${itemCount}">Food Item Name:</label>
+          <input type="text" id="itemName${itemCount}" required>
+
+          <label for="itemImage${itemCount}">Food Item Image:</label>
+          <input type="file" id="itemImage${itemCount}" accept="image/*" required>
+
+          <label for="itemCost${itemCount}">Cost ($):</label>
+          <input type="text" id="itemCost${itemCount}" required>
+
+          <label for="itemDescription${itemCount}">Description:</label>
+          <textarea id="itemDescription${itemCount}" rows="4"></textarea>
+
+          <button type="button" class="delete-item">Delete</button>
+        </div>
+      `;
+
+      foodItemsContainer.appendChild(foodItemDiv);
+    });
+
+    document.getElementById('restaurantForm').addEventListener('click', function(event) {
+      if (event.target.classList.contains('delete-item')) {
+        event.target.parentElement.remove();
+      }
+    });
+
+    document.getElementById('restaurantForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var restaurantName = document.getElementById('restaurantName').value;
+      var restaurantImage = document.getElementById('restaurantImage').files[0].name;
+
+      var foodItems = [];
+      var foodItemDivs = document.querySelectorAll('.food-item');
+      foodItemDivs.forEach(function(itemDiv) {
+        var itemName = itemDiv.querySelector('input[type="text"]').value;
+        var itemImage = itemDiv.querySelector('input[type="file"]').files[0].name;
+        var itemCost = itemDiv.querySelector('input[type="text"]').value;
+        var itemDescription = itemDiv.querySelector('textarea').value;
+
+        // Create HTML elements for menu items
+        var menuItemDiv = document.createElement('div');
+        menuItemDiv.className = 'food-item';
+        menuItemDiv.innerHTML = `
+          <img src="${itemImage}" alt="${itemName}">
+          <div>
+            <h3>${itemName}</h3>
+            <p>Cost: $${itemCost}</p>
+            <p>${itemDescription}</p>
+          </div>
+        `;
+
+        // Append menu item to the menu section
+        document.getElementById('menuItems').appendChild(menuItemDiv);
+
+        // Add item details to foodItems array
+        foodItems.push({
+          name: itemName,
+          image: itemImage,
+          cost: itemCost,
+          description: itemDescription
+        });
+      });
+
+      console.log('Restaurant Name:', restaurantName);
+      console.log('Restaurant Image:', restaurantImage);
+      console.log('Food Items:', foodItems);
+      
+      // Here you can send the data to the server for further processing
+      // For now, we're just logging the data to the console
+    });
+
+    // Show corresponding section based on navigation
+    document.querySelectorAll('nav a').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        var targetId = this.getAttribute('href').substring(1);
+        var sections = document.querySelectorAll('.container');
+        sections.forEach(function(section) {
+          if (section.id === targetId) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  
+  
+  
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Book itNow!</title>
+<script>
+    function customerlogin() {
+      // Replace 'destination.html' with the URL of the page you want to navigate to
+      window.location.href = 'customer-login.html';
+    }
+    function venderlogin() {
+      // Replace 'destination.html' with the URL of the page you want to navigate to
+      window.location.href = 'vender-login.html';
+    }
+  </script>
+<style>
+  body {
+    margin: 10%;
+    padding: 00;
+    font-family: Arial, sans-serif;
+    background-image: url("welcome page background.png"); /* Replace 'background-image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .container {
+    text-align: center;
+    background-position: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: rgb(51, 46, 46);
+    background-color: aliceblue;
+  }
+  h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: rgb(43, 36, 36);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Welcome to</h2>
+  <h1> Book itNow!</h1>
+  <div class="btn-container">
+    <button class="btn" onclick="customerlogin()">Log in as a Customer</button>
+    <button class="btn" onclick="venderlogin()">Log in as a Vender</button>
+  </div>
+</div>
+
+</body>
+</html>

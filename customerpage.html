@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Interface - BookItNow</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+      background-image: url("welcome page background.png"); /* Replace 'background-image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    }
+    .container {
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    h1{
+      
+     font-size: 40px;
+
+    }
+    .restaurant-container {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      background-color: black;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    .restaurant-container:hover {
+      transform: scale(1.05);
+    }
+    .restaurant-image {
+      flex: 1;
+      margin-right: 20px;
+    }
+    .restaurant-details {
+      flex: 2;
+    }
+    .restaurant-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .restaurant-name {
+      font-size: 24px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+    .restaurant-rating {
+      color: #ff5722;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #contactDetails {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 10px;}
+      table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background-color: #ff5722;
+      color: #fff;
+    }
+    tr:hover {
+      background-color: #f2f2f2;
+    }
+    .select-button {
+      padding: 8px 16px;
+      background-color: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .select-button:hover {
+      background-color: #ff7043;
+    }
+    order-button {
+padding: 8px 16px;
+background-color: #4caf50;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+.order-button:hover {
+background-color: #45a049;
+}
+  </style>
+  
+</head>
+<body>
+  <nav>
+    <h1><span style="color: #f3f3f3;">welcome to</span>  <span style="color: #ff5722;">BookItNow</span></h1>
+    <a href="#orders">Your Orders</a>
+    <a href="#contactDetails">Contact Us</a>
+    <a href="customer login.html">Logout</a>
+  </nav>
+  <div class="container">
+    
+    <h2>Restaurants in your area</h2>
+
+    <!-- Restaurant containers (replace with actual data) -->
+    <div class="restaurant-container" onclick="window.location.href='#FlavorFusion Bistro'">
+      <div class="restaurant-image">
+        <img src="res1.jpeg" alt="Restaurant 1">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">FlavorFusion Bistro</div>
+        <div class="restaurant-rating">Rating: 4.5 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#UrbanPalate Eatery'">
+      <div class="restaurant-image">
+        <img src="res2.jpeg" alt="Restaurant 2">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">UrbanPalate Eatery</div>
+        <div class="restaurant-rating">Rating: 4.2 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#SpiceRoute Tavern'">
+      <div class="restaurant-image">
+        <img src="res3.jpeg" alt="Restaurant 2">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">SpiceRoute Tavern</div>
+        <div class="restaurant-rating">Rating: 4.1 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#CulinaryCanvas Café'">
+      <div class="restaurant-image">
+        <img src="res4.jpeg" alt="Restaurant 2">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">CulinaryCanvas Café</div>
+        <div class="restaurant-rating">Rating: 3.9 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#SavorScape Kitchen'">
+      <div class="restaurant-image">
+        <img src="res5.jpeg" alt="Restaurant 2">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">SavorScape Kitchen</div>
+        <div class="restaurant-rating">Rating: 4.6 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#TastyTrove Bistro'">
+      <div class="restaurant-image">
+        <img src="res6.jpeg" alt="Restaurant 6">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">TastyTrove Bistro</div>
+        <div class="restaurant-rating">Rating: 4.2 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#Epicurean Haven'">
+      <div class="restaurant-image">
+        <img src="res7.jpeg" alt="Restaurant 7">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">Epicurean Haven</div>
+        <div class="restaurant-rating">Rating: 3.1 stars</div>
+      </div>
+    </div>
+    <div class="restaurant-container" onclick="window.location.href='#Nectar Nook Dining'">
+      <div class="restaurant-image">
+        <img src="res8.jpeg" alt="Restaurant 8">
+      </div>
+      <div class="restaurant-details">
+        <div class="restaurant-name">Nectar Nook Dining</div>
+        <div class="restaurant-rating">Rating: 2.6 stars</div>
+      </div>
+    </div>
+    <!-- Repeat restaurant containers as needed -->
+
+  </div>
+
+  <!-- Menu section -->
+  
+  <div id="FlavorFusion Bistro" class="container" >
+    <h2>FlavorFusion Bistro Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Classic Spaghetti Carbonara</td>
+          <td>$12</td>
+          <td><button class="select-button" onclick="addToOrder('Classic Spaghetti Carbonara', 12)">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Grilled Salmon with Lemon Butter Sauce</td>
+          <td>$16</td>
+          <td><button class="select-button" onclick="addToOrder('Grilled Salmon with Lemon Butter Sauce', 16)">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Beef Wellington</td>
+          <td>$24</td>
+          <td><button class="select-button" onclick="addToOrder('Beef Wellington', 24)">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Chicken Alfredo Pasta</td>
+          <td>$14</td>
+          <td><button class="select-button" onclick="addToOrder('Chicken Alfredo Pasta', 14)">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Vegetable Stir-Fry</td>
+          <td>$10</td>
+          <td><button class="select-button" onclick="addToOrder('Vegetable Stir-Fry', 10)">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Margherita Pizza</td>
+          <td>$11</td>
+          <td><button class="select-button" onclick="addToOrder('Margherita Pizza', 11)">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Lobster Bisque Soup</td>
+          <td>$18</td>
+          <td><button class="select-button" onclick="addToOrder('Lobster Bisque Soup', 18)">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Beef Stroganoff</td>
+          <td>$19</td>
+          <td><button class="select-button" onclick="addToOrder('Beef Stroganoff', 19)">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Tandoori Chicken</td>
+          <td>$15.</td>
+          <td><button class="select-button" onclick="addToOrder('Tandoori Chicken', 15)">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Pad Thai</td>
+          <td>$13</td>
+          <td><button class="select-button" onclick="addToOrder('Pad Thai', 13)">Select</button></td>
+        </tr>
+        
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="orderSection" class="container">
+    <h2>Your Order</h2>
+    <ul id="orderList"></ul>
+    <button class="order-button" onclick="confirmOrder()">Order</button>
+  </div>
+  <div id="UrbanPalate Eatery" class="container" >
+    <h2>UrbanPalate Eatery Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Caesar Salad</td>
+          <td>$8.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Shrimp Scampi</td>
+          <td>$17.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mushroom Risotto</td>
+          <td>$14.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>BBQ Ribs</td>
+          <td>$21.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Fish Tacos</td>
+          <td>$12.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Caprese Salad</td>
+          <td>$9.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Chicken Tikka Masala</td>
+          <td>$16.25</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Beef Tacos</td>
+          <td>$11.75</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Veggie Burger</td>
+          <td>$10.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Chicken Caesar Wrap</td>
+          <td>$9.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="SpiceRoute Tavern" class="container" >
+    <h2>SpiceRoute Tavern Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Pesto Pasta</td>
+          <td>$10.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Roast Beef Sandwich</td>
+          <td>$11.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Greek Salad</td>
+          <td>$8.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Veggie Stir-Fry</td>
+          <td>$9.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Chicken Teriyaki</td>
+          <td>$13.25</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Mushroom Pizza</td>
+          <td>$12.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Clam Chowder</td>
+          <td>$10.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Philly Cheesesteak</td>
+          <td>$13.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Falafel Wrap</td>
+          <td>$8.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Beef Burger</td>
+          <td>$11.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="CulinaryCanvas Café" class="container" >
+    <h2>CulinaryCanvas Café Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Chicken Caesar Wrap</td>
+          <td>$9.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Penne Arrabiata</td>
+          <td>$10.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Pulled Pork Sandwich</td>
+          <td>$11.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Cobb Salad</td>
+          <td>$8.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Beef Enchiladas</td>
+          <td>$13.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Chicken Parmesan</td>
+          <td>$14.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Caprese Wrap</td>
+          <td>$9.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Veggie Pizza</td>
+          <td>$12.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Clam Linguine</td>
+          <td>$13.25</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Chicken Fajitas</td>
+          <td>$15.75</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="SavorScape Kitchen" class="container" >
+    <h2>SavorScape Kitchen Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>1</td>
+          <td>Roast Chicken</td>
+          <td>$16.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Vegetable Curry</td>
+          <td>$12.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Greek Wrap</td>
+          <td>$9.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>BBQ Chicken Pizza</td>
+          <td>$14.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Lobster Roll</td>
+          <td>$18.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Tuna Salad Sandwich</td>
+          <td>$10.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Veggie Stir-Fry</td>
+          <td>$9.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Chicken Caesar Salad</td>
+          <td>$11.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Margherita Wrap</td>
+          <td>$8.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Penne Primavera</td>
+          <td>$13.25</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="TastyTrove Bistro" class="container" >
+    <h2>TastyTrove Bistro Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <tr>
+            <td>1</td>
+            <td>Pulled Pork Wrap</td>
+            <td>$11.49</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Greek Pizza</td>
+            <td>$12.99</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Clam Pasta</td>
+            <td>$14.25</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Chicken Satay</td>
+            <td>$15.99</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Veggie Burger</td>
+            <td>$10.99</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Chicken Fettuccine Alfredo</td>
+            <td>$13.49</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Roast Beef Wrap</td>
+            <td>$11.49</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Teriyaki Salmon</td>
+            <td>$17.99</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Cobb Wrap</td>
+            <td>$9.99</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Beef Stew</td>
+            <td>$16.49</td>
+            <td><button class="select-button">Select</button></td>
+          </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="Epicurean Haven" class="container" >
+    <h2>Epicurean Haven Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td>1</td>
+          <td>Chicken Enchiladas</td>
+          <td>$14.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Spinach Salad</td>
+          <td>$9.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Beef Tostadas</td>
+          <td>$11.25</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Tofu Stir-Fry</td>
+          <td>$10.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>BBQ Chicken Salad</td>
+          <td>$12.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Caprese Flatbread</td>
+          <td>$10.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Lobster Mac and Cheese</td>
+          <td>$19.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Chicken Panini</td>
+          <td>$11.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Veggie Quesadilla</td>
+          <td>$10.25</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Beef Tagine</td>
+          <td>$18.75</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  <div id="Nectar Nook Dining" class="container" >
+    <h2>Nectar Nook Dining Menu</h2>
+    <!-- Include menu items here -->
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Item Name</th>
+          <th>Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Chicken and Waffles</td>
+          <td>$13.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Spaghetti Carbonara</td>
+          <td>$12.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Grilled Salmon with Lemon Butter Sauce</td>
+          <td>$16.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Beef Wellington</td>
+          <td>$23.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Chicken Alfredo Pasta</td>
+          <td>$14.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Vegetable Stir-Fry</td>
+          <td>$11.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Margherita Pizza</td>
+          <td>$10.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Lobster Bisque Soup</td>
+          <td>$17.99</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Beef Stroganoff</td>
+          <td>$18.49</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Tandoori Chicken</td>
+          <td>$15.75</td>
+          <td><button class="select-button">Select</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+  
+  <script>
+    // JavaScript code
+    let orderItems = [];
+
+    function addToOrder(itemName, cost) {
+      orderItems.push({ itemName, cost });
+      updateOrderList();
+    }
+
+    function updateOrderList() {
+      const orderList = document.getElementById('orderList');
+      orderList.innerHTML = '';
+      orderItems.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${index + 1}. ${item.itemName} - $${item.cost.toFixed(2)}`;
+        orderList.appendChild(listItem);
+      });
+      document.getElementById('orderSection').style.display = 'block';
+    }
+
+    function confirmOrder() {
+      // Here you can implement logic to submit the order
+      alert('Your order is successfully placed!');
+      // Reset orderItems array and hide order section
+      orderItems = [];
+      updateOrderList();
+      document.getElementById('orderSection').style.display = 'none';
+    }
+  </script>
+  <div id="orders" class="container">
+    <h2>Orders</h2>
+    <ul id="orderList"></ul>
+    
+  </div>
+  <div id="contactDetails" class="container">
+    <h2>Contact Us</h2>
+    <p>Helpline Number: 000 0101 2020</p>
+    <p>WhatsApp: 1231231230</p>
+    <p>Email: bookItNow@gmail.com</p>
+    <p>Feel free to contact us, 24/7 service available</p>
+  </div>
+</body>
+</html>
